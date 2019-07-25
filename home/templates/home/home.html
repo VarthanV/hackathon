@@ -1,35 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'home/base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <!-- <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <!-- <link href="css/style.min.css" rel="stylesheet"> -->
-  <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
-
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
-
+{% block head %}
   <style type="text/css">
     html,
     body,
@@ -59,10 +30,10 @@
     }
 
   </style>
-</head>
 
-<body>
+{% endblock %}
 
+{% block body %}
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
@@ -86,7 +57,7 @@
          <li> <div class="dropdown">
 
   <!--Trigger-->
-  <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+  <button class="btn btn-md dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
     aria-haspopup="true" aria-expanded="false">Categories</button>
 
   <!--Menu-->
@@ -96,6 +67,12 @@
    {% endfor %}
   </div>
 </div> </li>
+           <li>
+    <form class="form-inline mr-auto mt-2 ml-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn blue-gradient btn-rounded btn-md my-0" type="submit">Search</button>
+    </form>
+    </li>
         </ul>
 
         <!-- Right -->
@@ -123,6 +100,7 @@
               <i class="fab fa-github mr-2"></i>MDB GitHub
             </a>
           </li>
+ 
         </ul>
 
       </div>
@@ -295,7 +273,7 @@
 
             <!--Card-->
             <div class="card">
-            {}
+            
               <!--Card image-->
               <div class="view overlay">
                 <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg" class="card-img-top"
@@ -310,7 +288,7 @@
               <div class="card-body text-center">
                 <!--Category & Title-->
                 <a href="" class="grey-text">
-                  <h5>Shirt</h5>
+                  <h5></h5>
                 </a>
                 <h5>
                   <strong>
@@ -744,23 +722,5 @@
     <!--/.Copyright-->
 
   </footer>
-  <!--/.Footer-->
 
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-
-  </script>
-</body>
-
-</html>
+{% endblock %}
