@@ -1,14 +1,16 @@
 {% extends 'home/base.html' %}
 
+{% block head %}
+{% endblock %}
+
 {% block body %}
 
-  <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
         <div class="container">
     
           <!-- Brand -->
           <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-            <strong class="blue-text">MDB</strong>
+            <strong class="brown-text">Women's Paradise</strong>
           </a>
     
           <!-- Collapse -->
@@ -22,24 +24,27 @@
     
             <!-- Left -->
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link waves-effect" href="#">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About MDB</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-                  target="_blank">Free download</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-                  tutorials</a>
-              </li>
-            </ul>
+        <li> <div class="dropdown">
     
+      <!--Trigger-->
+      <button class="btn btn-md dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Categories</button>
+    
+      <div class="dropdown-menu dropdown-primary">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </div> 
+    </li>
+    <li>
+    <form class="form-inline mr-auto mt-2 ml-2">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn blue-gradient btn-rounded btn-md my-0" type="submit">Search</button>
+    </form>
+    </li>
+    </ul>
             <!-- Right -->
             <ul class="navbar-nav nav-flex-icons">
               <li class="nav-item">
@@ -71,7 +76,6 @@
     
         </div>
       </nav>
-      <!-- Navbar -->
     
       <!--Main layout-->
       <main class="mt-5 pt-4">
@@ -107,9 +111,6 @@
                 </div>
     
                 <p class="lead">
-                  <span class="mr-1">
-                    <del>$200</del>
-                  </span>
                   <span>$100</span>
                 </p>
     
