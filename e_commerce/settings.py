@@ -135,6 +135,6 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 PAYPAL_RECEIVER_EMAIL = 'vishnulatha006-facilitator@gmail.com'
  
 PAYPAL_TEST = True
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/image')
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
