@@ -11,6 +11,7 @@ class Product(models.Model):
     description = models.TextField()
     img = models.ImageField(upload_to="image",blank=True,null=True)
     rating = models.IntegerField()
+    
     def __str__(self):
         return self.name
     

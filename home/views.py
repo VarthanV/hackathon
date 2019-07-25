@@ -9,7 +9,7 @@ from .models import Product,Category,Quantity,Seller,Buyer
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 
-
+categories=[category.category for category in Category.objects.all()]
 class HomeView(View):
     template_name='home/home.html'
     def get(self,request):
@@ -126,7 +126,43 @@ class ProductCreate(View):
             category.save()
             return redirect('product_view',pk=product.pk)
         return render(request,self.template_name)
-
-
-
-        
+class ProductEditView(View):
+    template_name="home/product_edit.html"
+    def get(self,request,pk):
+        product=Product.objects.get(pk=pk)
+        if not request.user.is_authenticated:
+            return HttpResponse("Not Found")
+        if not product in request.user.seller.products.all():
+            return HttpResponse("Not Found")
+        return render(request,self.template_name,{'product':product})    
+    def post(self,request,pk):
+        product= Product.objects.get(pk=pk)
+        if not request.user.is_authenticated():
+            return HttpResponse("Not Found")
+        if not product in request.user.seller.products.all():
+            return HttpResponse("Not Found")
+        else:
+            product=Product.objects.get(pk=pk)
+            product=Product()
+            product.name =request.POST.get('name')
+            product.price=request.POST.get('price')
+            product.description=request.POST.get('description')
+            product.img=request.FILES.get('image')
+            product.stock=True
+            product.rating =0
+            product.seller=request.user.seller
+            product.save()
+            category=Category()
+            category.category=request.POST.get('category').title()
+            category.product=product
+            category.save
+            return redirect('product_view',pk=product.pk)
+        return render(request,self.template_name,{'product':product})    
+class CategorySearchView(View):
+    template_name='home/category.html'
+    def get(self,request):
+        products=[category.product for category in Category.objects.filter(category=request.GET.get('category').title() )]
+        return render(request,self.template_name,{'products':products})
+    def post(self,request):
+        products=[category.product for category in Category.objects.filter(category=request.POST.get('category').title())]
+        return render(request,self.template_name,{'products':products,'categories':categories})
