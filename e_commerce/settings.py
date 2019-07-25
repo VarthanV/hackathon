@@ -128,8 +128,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '971962391088-r7t5m8ljrgnju7iabq6gmeu4euq840i7.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'QSyw61tz1FuknLKqrwu4smpl'
 LOGIN_URL = '/auth/login/google-oauth2/'
 
-LOGIN_REDIRECT_URL = '/home/'
-LOGOUT_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 PAYPAL_RECEIVER_EMAIL = 'vishnulatha006-facilitator@gmail.com'
